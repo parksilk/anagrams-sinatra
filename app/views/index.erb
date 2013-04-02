@@ -1,4 +1,6 @@
-<div class="container">
-  Show a list of anagrams for "<%=@query_word%>"
-  <%= @anagrams %>
-</div>
+<h3>Show a list of anagrams for "<%=@query_word%>"</h3>
+<ul>
+<% @anagrams.each do |word| %>
+  <li><%= word %></li>
+<% end %>
+</ul>

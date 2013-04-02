@@ -9,7 +9,7 @@ class Word < ActiveRecord::Base
 
   def self.anagrams(query_word)
     query_word_sort = query_word.strip.downcase.split(//).sort.join
-    Word.where("sorted = #{query_word_sort}")
+    Word.where(:sorted => query_word_sort)
   end
 
 end
