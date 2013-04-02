@@ -3,9 +3,20 @@ get '/' do
   erb :index
 end
 
-get '/:word' do
+
+post '/anagram' do
   @query_word = params[:word]
   @anagrams = Word.anagrams(@query_word) 
   @anagrams = @anagrams.map{ |a| a.anagram }
-  erb :index 
+  erb :index
 end
+
+
+
+
+# get '/:word' do
+#   @query_word = params[:word]
+#   @anagrams = Word.anagrams(@query_word) 
+#   @anagrams = @anagrams.map{ |a| a.anagram }
+#   erb :index 
+# end

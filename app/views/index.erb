@@ -1,6 +1,14 @@
-<h3>Show a list of anagrams for "<%=@query_word%>"</h3>
-<ul>
-<% @anagrams.each do |word| %>
-  <li><%= word %></li>
+<form action='/anagram' method='post'>
+<h2>Input a word to find it's anagrams:</h2>
+  <input type='text' name='word' autofocus='autofocus'/>
+  <input type='submit' value='Anagram It!'/>
+</form>
+
+<% if @anagrams %>
+  <h3>Anagrams for "<%=@query_word%>"</h3>
+  <ul>
+  <% @anagrams.each do |word| %>
+    <li><%= word %></li>
+  <% end %>
+  </ul>
 <% end %>
-</ul>
